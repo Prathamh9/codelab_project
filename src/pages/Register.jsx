@@ -15,9 +15,10 @@ export default function Register() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      handleRegister(formData)
+      await handleRegister(formData)
       console.log(formData);
     } catch (error) {
       console.log(error);
@@ -28,7 +29,8 @@ export default function Register() {
     <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-r from-amber-50 to-amber-100">
 
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-        <fieldset className="space-y-4">
+        <form onSubmit={handleSubmit}>
+          <fieldset className="space-y-4">
           <legend className="text-2xl font-semibold text-center text-green-950 mb-6">Create an Account</legend>
 
           <div>
@@ -80,12 +82,13 @@ export default function Register() {
           </div>
 
           <button
+            type="submit"
             className="btn btn-primary w-full py-3 mt-6 text-white rounded-lg shadow-lg hover:bg-green-600 transition duration-300"
-            onClick={handleSubmit}
           >
             Register
           </button>
         </fieldset>
+        </form>
 
         <p className="text-center text-sm text-gray-600 mt-4">
           Already have an account?{' '}

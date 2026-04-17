@@ -2,7 +2,7 @@ import UserContext from "../context/UserContext"
 import axios from 'axios'
 
 axios.defaults.withCredentials=true
-const Userprovider=({children})=>{
+const UserProvider=({children})=>{
     //global state
 
     //global function
@@ -70,4 +70,4 @@ const Userprovider=({children})=>{
 
     )
 }
-export default Userprovider;
+export default UserProvider;

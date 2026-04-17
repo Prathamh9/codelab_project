@@ -23,7 +23,7 @@ export default function AllPosts() {
     };
 
     fetchPosts();
-  }, [handleGetAllPosts]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-lime-50 to-emerald-100 px-4 py-10">
